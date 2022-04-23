@@ -31,3 +31,7 @@ Given n, take the sum of the digits of n. If that value has more than one digit,
 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 ```
 Carpeta **04-codewars-sum-of-digits**
+## Hand Challenge - 2022-04-23
+You find a strange mirror that always shows a hand that is moving. 
+The hand appears to be alive, and after a lot of questions of "yes" and "no" answer, you know that the hand is trying to teach you a program that is written in HPL (Hand Programming Language)...
+*View more info in folder* **05-hand-challenge**.
