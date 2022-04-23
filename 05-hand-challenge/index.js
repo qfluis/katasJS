@@ -1,4 +1,4 @@
-const traductorMano = (msg) => {
+const traductorMano = ( msg ) => {
     const messageArray = Array.from(msg);
     const memory = [0];
     let punteroMem = 0;
@@ -7,17 +7,17 @@ const traductorMano = (msg) => {
     let resultado = '';
     const pilaBucles = [];
     
-    const moverCursor = (paso) => {
+    const moverCursor = ( paso ) => {
         punteroMem += paso;
-        if (punteroMem >= memory.length) {
+        if ( punteroMem >= memory.length ) {
             memory.push(0);
-        } else if (punteroMem < 0) {
+        } else if ( punteroMem < 0 ) {
             punteroMem = 0;
             memory.unshift(0);
         }
     }
 
-    const incrementarValorMem = (incremento) => {
+    const incrementarValorMem = ( incremento ) => {
         memory[punteroMem] += incremento;
         
         if ( memory[punteroMem] > MAX_MEM ) {
@@ -31,20 +31,20 @@ const traductorMano = (msg) => {
         let end;        
         const encontrado = pilaBucles.map(bucle => bucle.start).indexOf(index);
 
-        if (encontrado !== -1) {
+        if ( encontrado !== -1 ) {
             end = pilabucles[encontrado].end;
         } else {
             let countAperturas = 0;
             let i = index;
             let finEncontrado = false;
-            while (i < messageArray.length && !finEncontrado) {
-                if (messageArray[i] === '🤜') {
+            while ( i < messageArray.length && !finEncontrado ) {
+                if ( messageArray[i] === '🤜' ) {
                     countAperturas++;
                 }
-                if (messageArray[i] === '🤛') {
+                if ( messageArray[i] === '🤛' ) {
                     countAperturas--
                 }
-                if(countAperturas === 0){
+                if( countAperturas === 0 ){
                     finEncontrado = true;
                     end = i;
                 }
@@ -52,14 +52,14 @@ const traductorMano = (msg) => {
             }
         }
 
-        if(memory[punteroMem] == 0) {
+        if( memory[punteroMem] == 0 ) {
             index = end;  //sale del bucle
-            if (encontrado !== -1) {
+            if ( encontrado !== -1 ) {
                 pilaBucles.pop();
             }
             return
         } else { // Añadir en pila de bucles
-            if(encontrado === -1) {
+            if( encontrado === -1 ) {
                 pilaBucles.push({
                     start:index,
                     end: end
@@ -77,27 +77,13 @@ const traductorMano = (msg) => {
     }
 
     const funciones = {
-        '👉': () => { // moves the memory pointer to the next cell
-            moverCursor(1);
-        }, 
-        '👈': () => { // moves the memory pointer to the previous cell
-            moverCursor(-1);
-        }, 
-        '👆': () => { // increment the memory cell at the current position 
-            incrementarValorMem(1);
-        }, 
-        '👇': () => { // decreases the memory cell at the current position. 
-            incrementarValorMem(-1);
-        }, 
-        '🤜': () => { //if the memory cell at the current position is 0, jump just after the corresponding 🤛
-            inicioBucle(); 
-        }, 
-        '🤛': () => { //if the memory cell at the current position is not 0, jump just after the corresponding 🤜
-            finBucle(); 
-        }, 
-        '👊': () => { //Display the current character represented by the ASCII code defined by the current position.
-            resultado += String.fromCharCode(memory[punteroMem]);            
-        } 
+        '👉': () => { moverCursor(1); }, // moves the memory pointer to the next cell 
+        '👈': () => { moverCursor(-1); }, // moves the memory pointer to the previous cell 
+        '👆': () => { incrementarValorMem(1); }, // increment the memory cell at the current position  
+        '👇': () => { incrementarValorMem(-1); }, // decreases the memory cell at the current position.  
+        '🤜': () => { inicioBucle(); }, //if the memory cell at the current position is 0, jump just after the corresponding 🤛  
+        '🤛': () => { finBucle(); }, //if the memory cell at the current position is not 0, jump just after the corresponding 🤜 
+        '👊': () => { resultado += String.fromCharCode(memory[punteroMem]); } //Display the current character represented by the ASCII code defined by the current position. 
     }
     
     let index;
@@ -109,10 +95,6 @@ const traductorMano = (msg) => {
     return resultado;    
 }
 
-/*
-- 
-- Loops of 🤜 and 🤛 can be nested. 
-*/
 console.log ("1er Mensaje: ");
 let res = traductorMano('👇🤜👇👇👇👇👇👇👇👉👆👈🤛👉👇👊👇🤜👇👉👆👆👆👆👆👈🤛👉👆👆👊👆👆👆👆👆👆👆👊👊👆👆👆👊');
 console.log(res);
