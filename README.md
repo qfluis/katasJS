@@ -49,3 +49,14 @@ Test examples:
 "Guvf vf zl svefg EBG13 rkprepvfr!"
 ```
 *folder* **06-roth-13**.
+
+## Nth Fibonacci - 2022-04-24
+I would like for you to write me a function that when given a number (n) returns the n-th number in the Fibonacci Sequence.
+
+For example:
+```
+   nthFibo(4) == 2
+```
+Because 2 is the 4th number in the Fibonacci Sequence.
+For reference, the first two numbers in the Fibonacci sequence are 0 and 1, and each subsequent number is the sum of the previous two.
+*folder* **07-n-th-fibonacci**.
