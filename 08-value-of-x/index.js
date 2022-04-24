@@ -52,4 +52,14 @@ console.log(valueOfX('x - 28 - 118 = - 6 + 132')); // 272
 console.log(valueOfX('x + 0 - 144 = - 42 + 40 - 42')); // 100
 console.log(valueOfX('x - 126 + 48 + 100 = + 48 + 35 - 111 ')); // x - 126 + 48 + 100 = + 48 + 35 - 111 // -50
 
+/* Otras soluciones (mejores)
+
+function valueOfX(eq) {
+  let [left, right] = eq.split(' = '); 
+  if (right.includes('x')) [left, right] = [right, left];
+  return (eval(right) - eval(left.replace('x', 0))) * (left.includes('- x') ? -1 : 1);
+}
+
+
+*/
 

@@ -1,13 +1,4 @@
 const digitize = (n) => {
-    //return (n+'').split('').reverse();
-    /*
-    for (let n of arrayN) {
-        console.log(n);
-        n = parseInt(n);
-        console.log(n);
-    }
-    */
-
     const arrayRestos = [];
     let resultado = n;
 
@@ -18,11 +9,19 @@ const digitize = (n) => {
     arrayRestos.push(resultado);
     
     return arrayRestos;
-    
-    
-    //return arrayN;
-
 } 
 
 console.log(digitize(12345));
 console.log(digitize(0));
+
+/* Otras soluciones
+
+function digitize(n) {
+  return String(n).split('').map(Number).reverse()
+}
+
+function digitize(n) {
+  return Array.from(String(n), Number).reverse();
+}
+
+*/
