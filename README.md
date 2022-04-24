@@ -82,7 +82,7 @@ Test Cases will be like this:
 
 *folder* **08-value-of-x**.
 
-## Convert number to reversed array of digits
+## Convert number to reversed array of digits - 2022-04-25
 Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
 
 Example:
@@ -91,3 +91,8 @@ Example:
 0 => [0]
 ```
 *folder* **09-number-2-reversed-array-digits**.
+
+## Sudoku Solution Validator 2022-04-25
+Programa que chequea si un sudoku está correctamente solucionado.
+
+*folder* **10-sudoku-solution-validator**.
