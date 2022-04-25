@@ -112,3 +112,16 @@ anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', '
 anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
 ```
 *folder* **11-anagrams-array**.
+
+## Regex password validator - 2022-04-25
+You need to write regex that will validate a password to make sure it meets the following criteria:
+- At least six characters long
+- contains a lowercase letter
+- contains an uppercase letter
+- contains a number
+Valid passwords will only be alphanumeric characters.
+*folder* **12-regex-password**.
+
+## Domain name - 2022-04-25
+Obtener el nombre de dominio de una url.
+*folder* **13-domain-name**.
