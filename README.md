@@ -125,3 +125,8 @@ Valid passwords will only be alphanumeric characters.
 ## Domain name - 2022-04-25
 Obtener el nombre de dominio de una url.
 *folder* **13-domain-name**.
+
+## Merge intervals - 2022-04-26
+Given an array of intervals, merge the overlapping intervals, and return an array of the resulting intervals.
+
+*folder* **13-domain-name**.
